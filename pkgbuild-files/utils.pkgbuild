@@ -2,7 +2,7 @@
 pkgname=eupnea-utils
 pkgver=1.41
 pkgrel=1
-pkgdesc="This package contains a set of tools to interact with EupneaOS/Depthboot systems. 
+pkgdesc="This package contains a set of tools to interact with EupneaOS/Depthboot systems.
 Not recommended for use on non-Chromebook devices."
 url="https://eupnea-linux.github.io/"
 arch=("x86_64")
@@ -26,7 +26,7 @@ package () {
   # Copy config files
   cp -r $srcdir/postinstall-scripts/configs/* $pkgdir/etc/eupnea
   cp -r $srcdir/audio-scripts/configs/* $pkgdir/etc/eupnea
-  
+
   # Copy scripts
   install -Dm 755 $srcdir/postinstall-scripts/user-scripts/* $pkgdir/usr/bin
   install -Dm 755 $srcdir/audio-scripts/setup-audio $pkgdir/usr/bin
