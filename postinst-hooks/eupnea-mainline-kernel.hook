@@ -1,0 +1,10 @@
+# Flash kernel to first partition of the drive
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = eupnea-mainline-kernel
+
+[Action]
+When = PostTransaction
+Exec = /usr/lib/eupnea/install-kernel /tmp/eupnea-kernel-update/bzImage

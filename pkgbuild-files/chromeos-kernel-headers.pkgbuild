@@ -1,0 +1,22 @@
+# Maintainer: The Eupnea Project
+pkgname=eupnea-chromeos-kernel-headers
+pkgver=1.-1
+pkgrel=1
+pkgdesc="This package contains the Eupnea ChromeOS kernel headers. It is only compatible with Eupnea ChromeOS kernels."
+url="https://eupnea-linux.github.io/"
+arch=("x86_64")
+license=('GPLv3')
+depends=('eupnea-chromeos-kernel-modules')
+
+prepare() {
+  #curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/headers.tar.xz  -o headers.tar.xz
+  curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/download/dev-build/headers.tar.xz  -o headers.tar.xz
+}
+
+package () {
+  # Make dirs
+  mkdir -p $pkgdir/usr/src
+
+  # Unpack tar
+  tar xfpJ $srcdir/headers.tar.xz -C $pkgdir/usr/src
+}
