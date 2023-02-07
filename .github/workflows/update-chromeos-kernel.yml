@@ -79,13 +79,19 @@ jobs:
           sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/chromeos-kernel-headers.pkgbuild # update version in control file
 
       - name: Packing chromeos-kernel package
-        run: makepkg --nodeps -p pkgbuild-files/chromeos-kernel.pkgbuild
+        run: |
+          cp pkgbuild-files/chromeos-kernel.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p chromeos-kernel.pkgbuild
 
       - name: Packing chromeos-kernel-modules package
-        run: makepkg --nodeps -p pkgbuild-files/chromeos-kernel-modules.pkgbuild
+        run: |
+          cp pkgbuild-files/chromeos-kernel-modules.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p chromeos-kernel-modules.pkgbuild
 
       - name: Packing chromeos-kernel-headers package
-        run: makepkg --nodeps -p pkgbuild-files/chromeos-kernel-headers.pkgbuild
+        run: |
+          cp pkgbuild-files/chromeos-kernel-headers.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p chromeos-kernel-headers.pkgbuild
 
       - name: Downloading old repo
         run: |

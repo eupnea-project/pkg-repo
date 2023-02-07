@@ -81,7 +81,9 @@ jobs:
           sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/cgpt_vboot.pkgbuild # update version in control file
 
       - name: Repacking cgpt-vboot package
-        run: makepkg --nodeps -p pkgbuild-files/cgpt_vboot.pkgbuild
+        run: |
+          cp pkgbuild-files/cgpt_vboot.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p cgpt_vboot.pkgbuild
 
       - name: Downloading old repo
         run: |

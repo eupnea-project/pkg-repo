@@ -79,13 +79,19 @@ jobs:
           sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/mainline-kernel-headers.pkgbuild # update version in control file
 
       - name: Packing mainline-kernel package
-        run: makepkg --nodeps -p pkgbuild-files/mainline-kernel.pkgbuild
+        run: |
+          cp pkgbuild-files/mainline-kernel.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p mainline-kernel.pkgbuild
 
       - name: Packing mainline-kernel-modules package
-        run: makepkg --nodeps -p pkgbuild-files/mainline-kernel-modules.pkgbuild
+        run: |
+          cp pkgbuild-files/mainline-kernel-modules.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p mainline-kernel-modules.pkgbuild
 
       - name: Packing mainline-kernel-headers package
-        run: makepkg --nodeps -p pkgbuild-files/mainline-kernel-headers.pkgbuild
+        run: |
+          cp pkgbuild-files/mainline-kernel-headers.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p mainline-kernel-headers.pkgbuild
 
       - name: Downloading old repo
         run: |

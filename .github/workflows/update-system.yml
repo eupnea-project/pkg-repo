@@ -64,12 +64,14 @@ jobs:
 
       - name: Bump version in pkgbuild file
         run: |
-          CURRENT_VERSION=$(sed -n '3p' pkgbuild-files/system-pkgbuild | sed 's/.*://' | xargs) # get current version from control file
+          CURRENT_VERSION=$(sed -n '3p' pkgbuild-files/system.pkgbuild | sed 's/.*://' | xargs) # get current version from control file
           NEXTVERSION=$(echo ${CURRENT_VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}') # bump version
-          sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/system-pkgbuild # update version in control file
+          sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/system.pkgbuild # update version in control file
 
       - name: Packing eupnea-system package
-        run: makepkg --nodeps -p pkgbuild-files/system-pkgbuild
+        run: |
+          cp pkgbuild-files/system.pkgbuild . # makepkg needs the pkgbuild file in the current directory
+          makepkg --nodeps -p system.pkgbuild
 
       - name: Downloading old repo
         run: |
@@ -95,7 +97,7 @@ jobs:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
           commit_message: Update files in main branch
-          file_pattern: 'pkgbuild-files/system-pkgbuild cache/system_sha-cache.txt'
+          file_pattern: 'pkgbuild-files/system.pkgbuild cache/system_sha-cache.txt'
 
       - name: Deploying system packages
         uses: stefanzweifel/git-auto-commit-action@v4
