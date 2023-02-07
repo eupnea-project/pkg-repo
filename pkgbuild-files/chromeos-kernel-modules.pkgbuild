@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=eupnea-chromeos-kernel-modules
-pkgver=1.-1
+pkgver=1.0
 pkgrel=1
 pkgdesc="This package contains the Eupnea ChromeOS kernel modules. It is only compatible with Eupnea ChromeOS kernels."
 url="https://eupnea-linux.github.io/"
