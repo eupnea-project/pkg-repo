@@ -19,6 +19,14 @@ cp -r ../../*.pkg.tar.gz .
 # Sign packages
 echo "Signing packages"
 # For some reason a eupnea* wildcard doesnt sign all packages
+gpg --detach-sig eupnea-mainline-kernel*.pkg.tar.gz || true
+gpg --detach-sig eupnea-mainline-kernel-headers*.pkg.tar.gz || true
+gpg --detach-sig eupnea-mainline-kernel-modules*.pkg.tar.gz || true
+
+gpg --detach-sig eupnea-chromeos-kernel*.pkg.tar.gz || true
+gpg --detach-sig eupnea-chromeos-kernel-headers*.pkg.tar.gz || true
+gpg --detach-sig eupnea-chromeos-kernel-modules*.pkg.tar.gz || true
+
 gpg --detach-sig eupnea-system*.pkg.tar.gz || true
 gpg --detach-sig eupnea-utils*.pkg.tar.gz || true
 gpg --detach-sig cgpt-vboot-utils*.pkg.tar.gz || true
