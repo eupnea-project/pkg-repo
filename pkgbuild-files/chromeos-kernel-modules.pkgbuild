@@ -14,8 +14,8 @@ prepare() {
 
 package () {
   # Make dirs
-  mkdir -p $pkgdir/lib/modules
+  mkdir -p $pkgdir/usr/lib/modules
 
   # Unpack tar
-  tar xfpJ $srcdir/modules.tar.xz -C $pkgdir/lib/modules
+  tar xfpJ $srcdir/modules.tar.xz -C $pkgdir/usr/lib/modules
 }
