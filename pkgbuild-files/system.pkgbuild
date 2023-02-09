@@ -27,6 +27,6 @@ package () {
   cp $srcdir/system-update/eupnea_os_updates.py $pkgdir/tmp/eupnea-system-update
   cp $srcdir/system-update/depthboot_updates.py $pkgdir/tmp/eupnea-system-update
 
-  # Copy the hook
-  cp $srcdir/arch-repo/eupnea-system.hook $pkgdir/usr/share/libalpm/hooks/
+  # Copy the postinstall hook
+  cp $srcdir/arch-repo/postinst-hooks/eupnea-system.hook $pkgdir/usr/share/libalpm/hooks/
 }

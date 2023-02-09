@@ -22,4 +22,6 @@ package () {
   # Copy kernel to tmp location
   cp $srcdir/bzImage $pkgdir/tmp/eupnea-kernel-update/bzImage
 
+  # Copy the postinstall hook
+  cp $srcdir/arch-repo/postinst-hooks/eupnea-chromeos-kernel.hook $pkgdir/usr/share/libalpm/hooks/
 }
