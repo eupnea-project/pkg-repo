@@ -19,6 +19,7 @@ prepare() {
 package () {
   # Make dirs
   mkdir -p $pkgdir/tmp/eupnea-kernel-update
+  mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
   # Copy kernel to tmp location
   cp $srcdir/bzImage $pkgdir/tmp/eupnea-kernel-update/bzImage
