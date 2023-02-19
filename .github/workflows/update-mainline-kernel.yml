@@ -130,4 +130,3 @@ jobs:
           # Defaults to "Apply automatic changes"
           commit_message: Update files in main branch
           file_pattern: 'pkgbuild-files/mainline-kernel*.pkgbuild cache/mainline_kernel_tag-cache.txt'
-oh and also imagine not being able to rely on your system to work in the morningoh and also imagine not being able to rely on your system to work in the morning
