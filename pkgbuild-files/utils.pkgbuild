@@ -32,7 +32,7 @@ package () {
   install -Dm 755 $srcdir/audio-scripts/setup-audio $pkgdir/usr/bin
 
   # Copy systemd units
-  cp $srcdir/postinstall-scripts/systemd-services/eupnea-postinstall.service $pkgdir/etc/systemd/system/
+  cp $srcdir/postinstall-scripts/configs/systemd-services/eupnea-postinstall.service $pkgdir/etc/systemd/system/
 
   # Copy libs
   cp $srcdir/postinstall-scripts/system-scripts/* $pkgdir/usr/lib/eupnea
