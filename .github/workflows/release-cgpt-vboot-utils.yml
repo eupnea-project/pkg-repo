@@ -1,4 +1,3 @@
-# Unlike the other two workflows this one does not push to gh-pages, but creates a release instead.
 name: Repacking cgpt and vboot-utils
 on:
   schedule:
