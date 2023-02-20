@@ -16,7 +16,11 @@ prepare() {
 package () {
   # Make dirs
   mkdir -p $pkgdir/usr/src
+  mkdir -p $pkgdir/lib/modules/insert_version
 
   # Unpack tar
   tar xfpJ $srcdir/headers.tar.xz -C $pkgdir/usr/src
+
+  # Create symlink
+  ln -s /usr/src/linux-headers-insert_version/ $pkgdir/lib/modules/insert_version/build
 }
