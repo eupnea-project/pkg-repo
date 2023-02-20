@@ -9,8 +9,8 @@ license=('GPLv3')
 depends=('eupnea-chromeos-kernel-modules')
 
 prepare() {
-  #curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/headers.tar.xz  -o headers.tar.xz
-  curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/download/dev-build/headers.tar.xz  -o headers.tar.xz
+  #curl --silent -LO https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/headers.tar.xz
+  curl --silent -LO https://github.com/eupnea-linux/chromeos-kernel/releases/download/dev-build/headers.tar.xz
 }
 
 package () {

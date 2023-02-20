@@ -8,8 +8,8 @@ arch=("x86_64")
 license=('GPLv3')
 
 prepare() {
-  #curl --silent -L https://github.com/eupnea-linux/mainline-kernel/releases/latest/download/modules.tar.xz -o modules.tar.xz
-  curl --silent -L https://github.com/eupnea-linux/mainline-kernel/releases/download/dev-build/modules.tar.xz -o modules.tar.xz
+  #curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/latest/download/modules.tar.xz
+  curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/download/dev-build/modules.tar.xz
 }
 
 package () {

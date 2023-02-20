@@ -81,8 +81,8 @@ jobs:
       - name: Add kernel version to headers pkgbuild file
         run: |
           # download bzImage
-          curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/download/dev-build/bzImage -o bzImage
-          # curl --silent -L https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/bzImage -o bzImage
+          curl --silent -LO https://github.com/eupnea-linux/chromeos-kernel/releases/download/dev-build/bzImage
+          # curl --silent -LO https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/bzImage
           KERNEL_VERSION=$(file -bL ./bzImage | grep -o 'version [^ ]*' | cut -d ' ' -f 2) # get kernel version from bzImage
           sed -i "s/insert_version/$KERNEL_VERSION/g" pkgbuild-files/chromeos-kernel-headers.pkgbuild # replace version in pkgbuild file
 
