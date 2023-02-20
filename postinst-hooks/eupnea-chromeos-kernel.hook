@@ -7,4 +7,4 @@ Target = eupnea-chromeos-kernel
 
 [Action]
 When = PostTransaction
-Exec = /usr/lib/eupnea/install-kernel /tmp/eupnea-kernel-update/bzImage
+Exec = /usr/lib/eupnea/install-kernel /boot/vmlinuz-eupnea-chromeos

@@ -18,11 +18,11 @@ prepare() {
 
 package () {
   # Make dirs
-  mkdir -p $pkgdir/tmp/eupnea-kernel-update
+  mkdir -p $pkgdir/boot
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
-  # Copy kernel to tmp location
-  cp $srcdir/bzImage $pkgdir/tmp/eupnea-kernel-update/bzImage
+  # Copy kernel to /boot
+  cp $srcdir/bzImage $pkgdir/boot/vmlinuz-eupnea-chromeos
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/eupnea-chromeos-kernel.hook $pkgdir/usr/share/libalpm/hooks/
