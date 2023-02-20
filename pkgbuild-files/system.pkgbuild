@@ -15,17 +15,17 @@ prepare() {
 
 package () {
   # Make dirs
-  mkdir -p $pkgdir/tmp/eupnea-system-update/configs/
+  mkdir -p $pkgdir/usr/lib/eupnea-system-update/configs/
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
   # Copy config files
-  cp -r $srcdir/system-update/configs/* $pkgdir/tmp/eupnea-system-update/configs/
+  cp -r $srcdir/system-update/configs/* $pkgdir/usr/lib/eupnea-system-update/configs/
 
   # Copy the update scripts and functions.py
-  install -Dm 755 $srcdir/system-update/system-update.py $pkgdir/tmp/eupnea-system-update
-  cp $srcdir/system-update/functions.py $pkgdir/tmp/eupnea-system-update
-  cp $srcdir/system-update/eupnea_os_updates.py $pkgdir/tmp/eupnea-system-update
-  cp $srcdir/system-update/depthboot_updates.py $pkgdir/tmp/eupnea-system-update
+  install -Dm 755 $srcdir/system-update/system-update.py $pkgdir/usr/lib/eupnea-system-update
+  cp $srcdir/system-update/functions.py $pkgdir/usr/lib/eupnea-system-update
+  cp $srcdir/system-update/eupnea_os_updates.py $pkgdir/usr/lib/eupnea-system-update
+  cp $srcdir/system-update/depthboot_updates.py $pkgdir/usr/lib/eupnea-system-update
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/eupnea-system.hook $pkgdir/usr/share/libalpm/hooks/
