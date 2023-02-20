@@ -1,4 +1,4 @@
-# Execute system-update.py in /tmp/eupnea-system-update, to upgrade the system to a new version
+# Execute system-update.py in /usr/lib/eupnea-system-update, to upgrade the system to a new version
 [Trigger]
 Operation = Install
 Operation = Upgrade
