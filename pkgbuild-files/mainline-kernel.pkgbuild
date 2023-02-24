@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=eupnea-mainline-kernel
-pkgver=1.9
+pkgver=1.10
 pkgrel=1
 pkgdesc="WARNING: This package will overwrite the first partition of your current drive!
 Only use it on Chromebooks running Eupnea systems!
