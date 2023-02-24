@@ -9,8 +9,7 @@ license=('GPLv3')
 depends=('eupnea-mainline-kernel-modules')
 
 prepare() {
-  #curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/latest/download/headers.tar.xz
-  curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/download/dev-build/headers.tar.xz
+  curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/latest/download/headers.tar.xz
 }
 
 package () {
