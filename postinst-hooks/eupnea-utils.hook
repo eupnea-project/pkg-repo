@@ -1,0 +1,10 @@
+# Enable touchscreen fix systemd service if not running in a chroot
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = eupnea-utils
+
+[Action]
+When = PostTransaction
+Exec = /bin/bash -c "if [ -f /proc/mounts ]; then systemctl enable --now touchscreen-fix.service; fi"

@@ -32,11 +32,12 @@ package () {
   install -Dm 755 $srcdir/audio-scripts/setup-audio $pkgdir/usr/bin
 
   # Copy systemd units
-  cp $srcdir/eupnea-utils/configs/systemd-services/eupnea-postinstall.service $pkgdir/etc/systemd/system/
-  cp $srcdir/eupnea-utils/configs/systemd-services/eupnea-update.service $pkgdir/etc/systemd/system/
+  cp $srcdir/eupnea-utils/configs/systemd-services/* $pkgdir/etc/systemd/system/
 
   # Copy libs
   cp $srcdir/eupnea-utils/system-scripts/* $pkgdir/usr/lib/eupnea
   cp $srcdir/eupnea-utils/functions.py $pkgdir/usr/lib/eupnea
 
+  # Copy the postinstall hook
+  cp $srcdir/arch-repo/postinst-hooks/eupnea-utils.hook $pkgdir/usr/share/libalpm/hooks/
 }
