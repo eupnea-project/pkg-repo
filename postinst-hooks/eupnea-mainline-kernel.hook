@@ -7,4 +7,4 @@ Target = eupnea-mainline-kernel
 
 [Action]
 When = PostTransaction
-Exec = /usr/lib/eupnea/install-kernel /boot/vmlinuz-eupnea-mainline
+Exec = /usr/lib/eupnea/install-kernel --kernel-path /boot/vmlinuz-eupnea-mainline
