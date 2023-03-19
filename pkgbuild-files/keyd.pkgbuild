@@ -18,6 +18,7 @@ package () {
   # Make dirs
   mkdir -p $pkgdir/usr/lib/systemd/system
   mkdir -p $pkgdir/usr/share/libinput
+  mkdir -p $pkgdir/usr/share/libalpm/hooks/
   # the other dirs are automatically created by make install
 
   # Install with make
