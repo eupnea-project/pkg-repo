@@ -1,0 +1,32 @@
+# Maintainer: The Eupnea Project
+pkgname=keyd
+pkgver=10.0
+pkgrel=1
+pkgdesc="A key remapping daemon for linux.
+Made by rvaiya and repackaged by the Eupnea Project.
+Pulls from the master branch instead of using latest release."
+url="https://github.com/rvaiya/keyd"
+arch=("x86_64")
+license=('MIT')
+
+prepare() {
+  git clone --depth=1 https://github.com/rvaiya/keyd.git keyd-remote
+  git clone --depth=1 https://github.com/eupnea-linux/arch-repo.git
+}
+
+package () {
+  # Make dirs
+  mkdir -p $pkgdir/usr/lib/systemd/system
+  mkdir -p $pkgdir/usr/share/libinput
+  # the other dirs are automatically created by make install
+
+  # Install with make
+  # TODO: move to %build
+  cd keyd-remote
+  make
+  make DESTDIR=$pkgdir PREFIX='/usr' install
+  cd ..
+
+  # Copy the postinstall hook
+  cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
+}
