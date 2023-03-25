@@ -34,8 +34,8 @@ jobs:
           cgpt_latest_name=$(ls | grep cgpt*.deb)
           
           # Check remote names against cached ones
-          vboot_match_results=$([[ "$(cat cache/deb_name-cache.txt | head -1)" == "vboot_latest_name" ]] && echo "true" || echo "false")
-          cgpt_match_results=$([[ "$(cat cache/deb_name-cache.txt | tail -1)" == "cgpt_latest_name" ]] && echo "true" || echo "false")
+          vboot_match_results=$([[ "$(cat cache/deb_name-cache.txt | head -1)" == "$vboot_latest_name" ]] && echo "true" || echo "false")
+          cgpt_match_results=$([[ "$(cat cache/deb_name-cache.txt | tail -1)" == "$cgpt_latest_name" ]] && echo "true" || echo "false")
           
           # Compare results and determine if there was an update for any of the debs
           if [[ "$vboot_match_results" == "true" && "$cgpt_match_results" == "true" ]]; then
