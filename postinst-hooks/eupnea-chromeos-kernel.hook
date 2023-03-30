@@ -7,4 +7,4 @@ Target = eupnea-chromeos-kernel
 
 [Action]
 When = PostTransaction
-Exec = /usr/lib/eupnea/install-kernel --kernel-path /boot/vmlinuz-eupnea-chromeos
+Exec = /usr/lib/eupnea/install-kernel --ignore-reboot --kernel-path /boot/vmlinuz-eupnea-chromeos
