@@ -31,7 +31,7 @@ package () {
   cd ..
 
   # add quirks file
-  cp $srcdir/arch-repo/configs/keyd.quirks $pkgdir/keyd/usr/share/libinput
+  cp $srcdir/arch-repo/configs/keyd.quirks $pkgdir/keyd/usr/share/libinput/keyd.quirks
 
   # add keyboard configs
   cp -r $srcdir/eupnea-utils/configs/* $pkgdir/usr/share/eupnea/
