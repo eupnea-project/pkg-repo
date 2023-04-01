@@ -11,7 +11,7 @@ license=('MIT')
 
 prepare() {
   git clone --depth=1 https://github.com/rvaiya/keyd.git keyd-remote
-  git clone --depth=1 https://github.com/eupnea-linux/arch-repo.git
+  git clone --depth=1 --branch=main https://github.com/eupnea-linux/arch-repo.git
 }
 
 package () {
@@ -22,11 +22,14 @@ package () {
   # the other dirs are automatically created by make install
 
   # Install with make
-  # TODO: move to %build
+  # TODO: move to build()
   cd keyd-remote
   make
   make DESTDIR=$pkgdir PREFIX='/usr' install
   cd ..
+
+  # add quirks file
+  cp $srcdir/arch-repo/configs/keyd.quirks $pkgdir/keyd/usr/share/libinput/keyd.quirks
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
