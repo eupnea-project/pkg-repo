@@ -17,8 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       match_results: ${{ steps.check-shas.outputs.match_results }}
-      postinstall_remote_sha: ${{ steps.check-shas.outputs.postinstall_remote_sha }}
-      audio_remote_sha: ${{ steps.check-shas.outputs.audio_remote_sha }}
+      remote_sha: ${{ steps.check-shas.outputs.remote_sha }}
     steps:
       - name: Checking out repository code
         uses: actions/checkout@v3
@@ -32,7 +31,7 @@ jobs:
           latest_sha=$(curl -s https://api.github.com/repos/rvaiya/keyd/commits/master | jq -r '.sha')
           # fail if curl result is empty
           if [[ -z "$latest_sha" ]]; then
-              echo "latest_tag is empty"
+              echo "latest_sha is empty"
               exit 1
           fi
           
@@ -65,9 +64,9 @@ jobs:
           # Set author in makepkg.conf
           echo 'PACKAGER="The Eupnea Project <https://github.com/eupnea-linux>"' | sudo tee -a /etc/makepkg.conf
 
-      - name: Update local tag releases cache file
+      - name: Update local commit sha cache file
         run: |
-          echo "${{ needs.check-sha.outputs.remote_tag }}" > cache/keyd-cache.txt
+          echo "${{ needs.check-sha.outputs.remote_sha }}" > cache/keyd-cache.txt
 
       - name: Bump version in pkgbuild file
         run: |
