@@ -12,7 +12,7 @@ depends=('eupnea-utils>=1.95' 'eupnea-mainline-kernel-modules' 'eupnea-mainline-
 
 prepare() {
   curl --silent -LO https://github.com/eupnea-linux/mainline-kernel/releases/latest/download/bzImage
-  git clone --depth=1 https://github.com/eupnea-linux/arch-repo.git
+  git clone --depth=1 --branch=main https://github.com/eupnea-linux/arch-repo.git
 }
 
 package () {

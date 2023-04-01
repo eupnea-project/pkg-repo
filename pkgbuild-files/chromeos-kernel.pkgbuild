@@ -12,7 +12,7 @@ depends=('eupnea-utils>=1.95' 'eupnea-chromeos-kernel-modules' 'eupnea-chromeos-
 
 prepare() {
   curl --silent -LO https://github.com/eupnea-linux/chromeos-kernel/releases/latest/download/bzImage
-  git clone --depth=1 https://github.com/eupnea-linux/arch-repo.git
+  git clone --depth=1 --branch=main https://github.com/eupnea-linux/arch-repo.git
 }
 
 package () {
