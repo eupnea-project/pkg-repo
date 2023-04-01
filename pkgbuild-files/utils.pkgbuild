@@ -25,7 +25,6 @@ package () {
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
   # Copy config files
-  cp -r $srcdir/eupnea-utils/configs/* $pkgdir/etc/eupnea
   cp -r $srcdir/audio-scripts/configs/* $pkgdir/etc/eupnea
 
   # Copy scripts

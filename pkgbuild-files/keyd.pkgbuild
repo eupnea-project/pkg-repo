@@ -12,12 +12,14 @@ license=('MIT')
 prepare() {
   git clone --depth=1 https://github.com/rvaiya/keyd.git keyd-remote
   git clone --depth=1 --branch=main https://github.com/eupnea-linux/arch-repo.git
+  git clone --depth=1 https://github.com/eupnea-linux/eupnea-utils.git
 }
 
 package () {
   # Make dirs
   mkdir -p $pkgdir/usr/lib/systemd/system
   mkdir -p $pkgdir/usr/share/libinput
+  mkdir -p $pkgdir/usr/share/eupnea
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
   # the other dirs are automatically created by make install
 
@@ -30,6 +32,9 @@ package () {
 
   # add quirks file
   cp $srcdir/arch-repo/configs/keyd.quirks $pkgdir/keyd/usr/share/libinput/keyd.quirks
+
+  # add keyboard configs
+  cp -r $srcdir/eupnea-utils/configs/* $pkgdir/usr/share/eupnea/
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
