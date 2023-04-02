@@ -34,7 +34,7 @@ package () {
   cp $srcdir/arch-repo/configs/keyd.quirks $pkgdir/usr/share/libinput/keyd.quirks
 
   # add keyboard configs
-  cp -r $srcdir/eupnea-utils/configs/* $pkgdir/usr/share/eupnea/
+  cp -r $srcdir/eupnea-utils/configs/keyboard-layouts $pkgdir/usr/share/eupnea/
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
