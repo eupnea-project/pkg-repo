@@ -1,4 +1,4 @@
-name: Deploying system packages
+name: Deploying system package
 on:
   schedule:
     - cron: "10 0 * * *" # run at the start of every day
