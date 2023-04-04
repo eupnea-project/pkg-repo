@@ -88,7 +88,7 @@ jobs:
           # Copy old repo to current directory
           cp -r /tmp/arch-repo/repodata .
           
-          # Delete old util packages
+          # Delete old keyd packages
           rm -rf repodata/x86_64/keyd*.pkg.tar.gz
 
           # Delete all signatures
