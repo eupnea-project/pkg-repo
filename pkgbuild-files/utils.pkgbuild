@@ -18,7 +18,7 @@ prepare() {
 
 package () {
   # Make dirs
-  mkdir -p $pkgdir/etc/eupnea
+  mkdir -p $pkgdir/usr/share/eupnea
   mkdir -p $pkgdir/usr/bin
   mkdir -p $pkgdir/usr/lib/eupnea
   mkdir -p $pkgdir/usr/lib/systemd/system-sleep/
@@ -26,7 +26,7 @@ package () {
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
   # Copy config files
-  cp -r $srcdir/audio-scripts/configs/* $pkgdir/etc/eupnea
+  cp -r $srcdir/audio-scripts/configs/* $pkgdir/usr/share/eupnea
 
   # Copy scripts
   install -Dm 755 $srcdir/eupnea-utils/user-scripts/* $pkgdir/usr/bin
