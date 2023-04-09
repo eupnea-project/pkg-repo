@@ -26,6 +26,7 @@ package () {
   mkdir -p $pkgdir/usr/share/libalpm/hooks/
 
   # Copy config files
+  cp -r $srcdir/eupnea-utils/configs/deep_sleep_block.conf $pkgdir/usr/share/eupnea/deep_sleep_block.conf
   cp -r $srcdir/audio-scripts/configs/* $pkgdir/usr/share/eupnea
 
   # Copy scripts
