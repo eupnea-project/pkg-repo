@@ -7,4 +7,4 @@ Target = keyd
 
 [Action]
 When = PostTransaction
-Exec = /bin/bash -c "groupadd keyd; systemctl enable keyd.service && systemd-detect-virt -r || systemctl start keyd.service" # systemd-detect-virt -r returns 1 if not in a chroot
+Exec = /bin/bash -c "groupadd keyd && /usr/lib/eupnea/set-keymap --automatic && systemctl enable keyd.service && systemd-detect-virt -r || systemctl start keyd.service" # systemd-detect-virt -r returns 1 if not in a chroot
