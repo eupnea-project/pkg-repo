@@ -18,10 +18,8 @@ cd repodata/x86_64
 cp -r ../../*.pkg.tar.gz .
 # Sign packages
 echo "Signing packages"
-# Gpg doesnt support wildcards -> iterate over all packages that match the pattern
-for package in eupnea-*.pkg.tar.gz; do gpg --detach-sig $package; done || true
-for package in keyd-*.pkg.tar.gz; do gpg --detach-sig $package; done || true
-gpg --detach-sig cgpt-vboot-utils*.pkg.tar.gz || true
+# Gpg doesnt support wildcards -> iteratively sign all packages
+for package in *.pkg.tar.gz; do gpg --detach-sig $package; done || true
 
 # Create repo and sign it
 repo-add -s ./eupnea.db.tar.gz *.pkg.tar.gz
