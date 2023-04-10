@@ -1,4 +1,4 @@
-# Enable depthboot boot splash systemd service and start it if not in a chroot
+# Enable depthboot boot splash systemd service
 [Trigger]
 Operation = Install
 Operation = Upgrade
@@ -7,4 +7,4 @@ Target = depthboot-logo
 
 [Action]
 When = PostTransaction
-Exec = /bin/bash -c "systemctl enable eupnea-boot-splash.service && systemd-detect-virt -r || systemctl start eupnea-boot-splash.service" # systemd-detect-virt -r returns 1 if not in a chroot
+Exec = /bin/bash -c "systemctl enable eupnea-boot-splash.service"
