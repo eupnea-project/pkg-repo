@@ -19,6 +19,7 @@ package () {
   mkdir -p $srcdir/busybox-extracted
   mkdir -p $pkgdir/usr/bin
   mkdir -p $pkgdir/usr/share/eupnea
+  mkdir -p $pkgdir/usr/lib/systemd/system
 
   # Extract the alpine package
   tar xfpz $srcdir/busybox-static-1.35.0-r29.apk --warning=no-unknown-keyword -C $srcdir/busybox-extracted
