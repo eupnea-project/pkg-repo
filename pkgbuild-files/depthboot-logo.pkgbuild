@@ -1,0 +1,36 @@
+# Maintainer: The Eupnea Project
+pkgname=depthboot-logo
+pkgver=1.0
+pkgrel=1
+pkgdesc="Alpine busybox-static + depthboot logo"
+url="https://git.alpinelinux.org/aports/tree/main/busybox?h=master"
+arch=("x86_64")
+license=('GPLv2')
+
+prepare() {
+  # Download the alpine busybox-static package
+  curl -LO https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/busybox-static-1.35.0-r29.apk
+  # clone the eupnea logo repo
+  git clone --depth=1 https://github.com/eupnea-linux/logo.git
+}
+
+package () {
+  # make dirs
+  mkdir -p $srcdir/busybox-extracted
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/share/eupnea
+
+  # Extract the alpine package
+  tar xfpz $srcdir/busybox-static-1.35.0-r29.apk --warning=no-unknown-keyword -C $srcdir/busybox-extracted
+  # copy busybox binary into the package
+  install -Dm755 $srcdir/busybox-extracted/bin/busybox.static $pkgdir/usr/bin/busybox-alpine.static
+
+  # copy depthboot logo into the package
+  cp $srcdir/logo/depthboot.ppm $pkgdir/usr/share/eupnea/eupnea_boot_logo.ppm
+
+  # Copy config for centering the logo
+  cp $srcdir/logo/center-splash.conf $pkgdir/usr/share/eupnea/center-splash.conf
+
+  # add systemd service
+  cp $srcdir/logo/eupnea-boot-splash.service $pkgdir/usr/share/eupnea/eupnea-boot-splash.service
+}
