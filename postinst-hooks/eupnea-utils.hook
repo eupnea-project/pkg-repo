@@ -1,4 +1,4 @@
-# Enable touchscreen fix systemd service if not running in a chroot
+# Enable touchscreen fix systemd service and start it if not in a chroot
 [Trigger]
 Operation = Install
 Operation = Upgrade

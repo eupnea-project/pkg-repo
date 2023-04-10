@@ -1,4 +1,4 @@
-# Add keyd to groups + enable keyd systemd service if not running in a chroot
+# Add keyd to groups + enable keyd systemd service and start it if not in a chroot
 [Trigger]
 Operation = Install
 Operation = Upgrade
