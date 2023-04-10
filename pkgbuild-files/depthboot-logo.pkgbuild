@@ -32,5 +32,8 @@ package () {
   cp $srcdir/logo/center-splash.conf $pkgdir/usr/share/eupnea/center-splash.conf
 
   # add systemd service
-  cp $srcdir/logo/eupnea-boot-splash.service $pkgdir/usr/share/eupnea/eupnea-boot-splash.service
+  cp $srcdir/logo/eupnea-boot-splash.service $pkgdir/usr/lib/systemd/system/eupnea-boot-splash.service
+
+  # Copy the postinstall hook
+  cp $srcdir/arch-repo/postinst-hooks/depthboot-logo.hook $pkgdir/usr/share/libalpm/hooks/
 }
