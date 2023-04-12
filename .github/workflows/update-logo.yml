@@ -1,4 +1,4 @@
-name: Deploying logo packages
+name: Deploying logo package
 on:
   schedule:
     - cron: "30 1 * * *" # run at the start of every day after script repos update
@@ -72,21 +72,10 @@ jobs:
           NEXTVERSION=$(echo ${CURRENT_VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}') # bump version
           sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/depthboot-logo.pkgbuild # update version in control file
 
-#      - name: Bump version in eupneaOS logo pkgbuild file
-#        run: |
-#          CURRENT_VERSION=$(sed -n '3p' pkgbuild-files/eupneaos-logo.pkgbuild | sed 's/.*://' | xargs) # get current version from control file
-#          NEXTVERSION=$(echo ${CURRENT_VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}') # bump version
-#          sed -i "3s/.*/${NEXTVERSION}/" pkgbuild-files/eupneaos-logo.pkgbuild # update version in control file
-
       - name: Packing depthboot logo package
         run: |
           cp pkgbuild-files/depthboot-logo.pkgbuild . # makepkg needs the pkgbuild file in the current directory
           makepkg --nodeps -p depthboot-logo.pkgbuild
-
-#      - name: Packing eupneaOS logo package
-#        run: |
-#          cp pkgbuild-files/eupneaos-logo.pkgbuild . # makepkg needs the pkgbuild file in the current directory
-#          makepkg --nodeps -p eupneaos-logo.pkgbuild
 
       - name: Downloading old repo
         run: |
@@ -117,7 +106,7 @@ jobs:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
           commit_message: Update files in main branch
-          file_pattern: 'pkgbuild-files/*logo*.pkgbuild cache/logo-cache.txt'
+          file_pattern: 'pkgbuild-files/depthboot-logo.pkgbuild cache/logo-cache.txt'
 
       - name: Deploying logo packages
         uses: stefanzweifel/git-auto-commit-action@v4
