@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=keyd
-pkgver=10.22
+pkgver=10.23
 pkgrel=1
 pkgdesc="A key remapping daemon for linux.
 Made by rvaiya and repackaged by the Eupnea Project.
