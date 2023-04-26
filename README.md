@@ -12,6 +12,9 @@ Repo for arch packages. Provides the following packages:
 * `eupnea-chromeos-kernel` + `modules` + `headers`: ChromeOS kernel, modules and headers.
   See [eupnea-chromeos-kernel](https://eupnea-linux.github.io/docs/project/kernels#chromeos-eupnea-kernel)
 * `cgpt-vboot-utils`: Repackaged Ubuntu debs for cgpt and vboot-utils.
+* `keyd`: A key remapping daemon for linux, made by rvaiya. See [keyd](https://github.com/rvaiya/keyd)
+* `depthboot-logo`: [Alpine busybox-static](https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/busybox-static-1.35.0-r29.apk) +
+  Depthboot logo boot splash systemd service.
 
 # Add to system
 
