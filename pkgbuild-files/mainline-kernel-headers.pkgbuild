@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=eupnea-mainline-kernel-headers
-pkgver=1.23
+pkgver=1.24
 pkgrel=1
 pkgdesc="This package contains the Eupnea Mainline kernel headers. It is only compatible with Eupnea Mainline kernels."
 url="https://eupnea-linux.github.io/"
