@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=eupnea-mainline-kernel-modules
-pkgver=1.24
+pkgver=1.25
 pkgrel=1
 pkgdesc="This package contains the Eupnea Mainline kernel modules. It is only compatible with Eupnea Mainline kernels."
 url="https://eupnea-linux.github.io/"
