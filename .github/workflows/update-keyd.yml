@@ -62,7 +62,7 @@ jobs:
           # Install pacman-package-manager from ubuntu 22.10 repo
           sudo apt-get -y install pacman-package-manager libarchive-tools
           # Set author in makepkg.conf
-          echo 'PACKAGER="The Eupnea Project <https://github.com/eupnea-linux>"' | sudo tee -a /etc/makepkg.conf
+          echo 'PACKAGER="The Eupnea Project <https://github.com/eupnea-project>"' | sudo tee -a /etc/makepkg.conf
 
       - name: Update local commit sha cache file
         run: |
@@ -83,7 +83,7 @@ jobs:
         run: |
           # Download old repo.
           # Exit in case the branch doesn't exist yet
-          git clone --branch=gh-pages https://github.com/eupnea-linux/arch-repo /tmp/arch-repo || exit 0
+          git clone --branch=gh-pages https://github.com/eupnea-project/arch-repo /tmp/arch-repo || exit 0
           
           # Copy old repo to current directory
           cp -r /tmp/arch-repo/repodata .
