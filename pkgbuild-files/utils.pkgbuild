@@ -11,8 +11,8 @@ license=('GPLv3')
 depends=('parted' 'rsync' 'git' 'alsa-utils' 'strace')
 
 prepare() {
-  git clone --depth=1 https://github.com/eupnea-linux/eupnea-utils.git
-  git clone --depth=1 --branch=main https://github.com/eupnea-linux/arch-repo.git
+  git clone --depth=1 https://github.com/eupnea-project/eupnea-utils.git
+  git clone --depth=1 --branch=main https://github.com/eupnea-project/arch-repo.git
 }
 
 package () {
