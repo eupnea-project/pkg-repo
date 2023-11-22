@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=eupnea-chromeos-kernel
-pkgver=1.21
+pkgver=1.22
 pkgrel=1
 pkgdesc="WARNING: This package will overwrite the first partition of your current drive!
 Only use it on Chromebooks running Eupnea systems!
