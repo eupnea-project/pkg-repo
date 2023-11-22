@@ -11,7 +11,7 @@ license=('GPLv3')
 depends=('eupnea-utils>=1.95' 'eupnea-chromeos-kernel-modules' 'eupnea-chromeos-kernel-headers')
 
 prepare() {
-  curl --silent -LO https://github.com/eupnea-project/chromeos-kernel/releases/latest/download/bzImage
+  curl --silent -LO https://github.com/eupnea-project/linux-kernels/releases/download/latest-chromeos/bzImage
   git clone --depth=1 --branch=main https://github.com/eupnea-project/arch-repo.git
 }
 

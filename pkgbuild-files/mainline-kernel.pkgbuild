@@ -11,7 +11,7 @@ license=('GPLv3')
 depends=('eupnea-utils>=1.95' 'eupnea-mainline-kernel-modules' 'eupnea-mainline-kernel-headers')
 
 prepare() {
-  curl --silent -LO https://github.com/eupnea-project/mainline-kernel/releases/latest/download/bzImage
+  curl --silent -LO https://github.com/eupnea-project/linux-kernels/releases/download/latest-mainline/bzImage
   git clone --depth=1 --branch=main https://github.com/eupnea-project/arch-repo.git
 }
 
