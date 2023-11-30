@@ -7,7 +7,7 @@ Not recommended for use on non-Chromebook devices."
 url="https://eupnea-project.github.io/"
 arch=("x86_64")
 license=('GPLv3')
-depends=('eupnea-utils>=1.116')
+depends=('eupnea-utils>=1.116' 'python3>=3.10')
 
 prepare() {
   git clone --depth=1 https://github.com/eupnea-project/system-update.git
