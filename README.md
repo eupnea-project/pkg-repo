@@ -18,10 +18,14 @@ Repo for arch packages. Provides the following packages:
 # Add to system
 
 ```
-wget -O /tmp/eupnea.key https://eupnea-project.github.io/arch-repo/public_key.gpg
-sudo pacman-key --add /tmp/eupnea.key
-sudo pacman-key --lsign-key 94EB01F3608D3940CE0F2A6D69E3E84DF85C8A12
-echo "[eupnea]"$'\n'"Server = https://eupnea-project.github.io/arch-repo/repodata/$arch" | sudo tee -a /etc/pacman.conf
-sudo pacman -Syy
-sudo pacman -S eupnea-utils eupnea-system cgpt-vboot-utils
+# create local master key if it doesn't exist yet
+sudo pacman-key --init
+# download and import public eupnea key
+curl -L https://eupnea-project.github.io/pkg-repo/public_key.gpg | sudo gpg --homedir /etc/pacman.d/gnupg --import
+# sign public key
+sudo pacman-key --lsign-key 4F8A31EAADF1588D0B45A0DAAC87331A20A7250A
+# add repo to pacman.conf
+echo "[eupnea]"$'\n'"Server = https://eupnea-project.github.io/pkg-repo/repodata/$arch" | sudo tee -a /etc/pacman.conf
+# refresh all repos and update system
+sudo pacman -Syyu
 ```
