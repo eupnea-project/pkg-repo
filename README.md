@@ -25,7 +25,7 @@ curl -L https://eupnea-project.github.io/pkg-repo/public_key.gpg | sudo gpg --ho
 # sign public key
 sudo pacman-key --lsign-key 4F8A31EAADF1588D0B45A0DAAC87331A20A7250A
 # add repo to pacman.conf
-echo "[eupnea]"$'\n'"Server = https://eupnea-project.github.io/pkg-repo/repodata/\$arch" | sudo tee -a /etc/pacman.conf
+echo -e "[eupnea]"$'\n'"Server = https://eupnea-project.github.io/pkg-repo/repodata/\$arch" | sudo tee -a /etc/pacman.conf
 # refresh all repos and update system
 sudo pacman -Syyu
 ```
