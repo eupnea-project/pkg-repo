@@ -1,6 +1,3 @@
-# DO NOT USE THIS REPOSITORY
-### This repository is not yet ready to be used. Please do NOT add it to your package manager!
-
 # arch-repo
 
 Repo for arch packages. Provides the following packages:
