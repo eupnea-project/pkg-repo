@@ -7,12 +7,13 @@ Made by rvaiya and repackaged by the Eupnea Project.
 Pulls from the master branch instead of using latest release."
 url="https://github.com/rvaiya/keyd"
 arch=("x86_64")
-license=('MIT')
+license=('MIT AND BSD-3-Clause')
 
 prepare() {
   git clone --depth=1 https://github.com/rvaiya/keyd.git keyd-remote
   git clone --depth=1 --branch=main https://github.com/eupnea-project/arch-repo.git
   git clone --depth=1 https://github.com/eupnea-project/eupnea-utils.git
+  git clone --depth=1 https://github.com/weirdtreething/chromebook-linux-audio.git
 }
 
 package () {
@@ -35,6 +36,9 @@ package () {
 
   # add keyboard configs
   cp -r $srcdir/eupnea-utils/configs/keyboard-layouts $pkgdir/usr/share/eupnea/
+
+  # add generations json
+  cp $srcdir/weirdtreething/chromebook-linux-audio/boards.json $pkgdir/usr/share/eupnea/board-generations.json
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
