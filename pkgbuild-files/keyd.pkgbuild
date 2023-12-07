@@ -38,7 +38,7 @@ package () {
   cp -r $srcdir/eupnea-utils/configs/keyboard-layouts $pkgdir/usr/share/eupnea/
 
   # add generations json
-  cp $srcdir/weirdtreething/chromebook-linux-audio/conf/boards.json $pkgdir/usr/share/eupnea/board-generations.json
+  cp $srcdir/chromebook-linux-audio/conf/boards.json $pkgdir/usr/share/eupnea/board-generations.json
 
   # Copy the postinstall hook
   cp $srcdir/arch-repo/postinst-hooks/keyd.hook $pkgdir/usr/share/libalpm/hooks/
