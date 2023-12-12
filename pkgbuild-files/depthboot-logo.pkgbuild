@@ -8,8 +8,10 @@ arch=("x86_64")
 license=('GPLv2')
 
 prepare() {
-  # Download the alpine busybox-static package
-  curl -LO https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/busybox-static-1.35.0-r29.apk
+  # Determine the latest alpine static busybox package name
+  package_name=$(curl -L https://dl-cdn.alpinelinux.org/alpine/latest-stable/main/x86_64/ | grep busybox-static-  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}')
+  # download the latest alpine busybox package
+  curl -LO https://dl-cdn.alpinelinux.org/alpine/latest-stable/main/x86_64/$package_name
   # clone the eupnea logo repo
   git clone --depth=1 https://github.com/eupnea-project/logo.git
   # clone the arch-repo repo
