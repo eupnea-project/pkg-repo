@@ -1,6 +1,6 @@
 # Maintainer: The Eupnea Project
 pkgname=depthboot-logo
-pkgver=1.8
+pkgver=1.9
 pkgrel=1
 pkgdesc="Alpine busybox-static + depthboot logo boot splash"
 url="https://git.alpinelinux.org/aports/tree/main/busybox?h=master"
